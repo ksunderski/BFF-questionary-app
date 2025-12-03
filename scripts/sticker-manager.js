@@ -8,11 +8,12 @@ class StickerManager {
         this.stickerMode = false;
         console.log('[StickerManager] Initialized');
 
-        // 80s-90s themed sticker emojis
+        // 90s themed sticker emojis
         this.stickerTypes = [
-            '😊', '⭐', '💖', '🌈', '🎵',
-            '🎮', '📼', '💿', '☎️', '📻',
-            '🎸', '🌟', '💫', '✨', '🎨'
+            '😎', '💾', '📟', '📼', '💿',
+            '🎮', '💻', '📺', '☎️', '📻',
+            '🛼', '🍕', '✌️', '👾', '🎸',
+            '⭐', '💖', '🌈', '✨', '🎨'
         ];
     }
 

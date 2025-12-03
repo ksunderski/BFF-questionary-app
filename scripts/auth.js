@@ -47,11 +47,21 @@ class Auth {
 
     // Get user statistics
     getUserStats() {
+        if (!this.currentUser) {
+            console.warn('[Auth] No current user for stats');
+            return {
+                questionnairesCreated: 0,
+                friendsAdded: 0,
+                completedQuestionnaires: 0,
+                unreadNotifications: 0
+            };
+        }
+
         const stats = {
-            questionnairesCreated: this.currentUser.questionnaires.length,
-            friendsAdded: this.currentUser.friends.length,
-            completedQuestionnaires: this.currentUser.receivedQuestionnaires.filter(q => q.status === 'completed').length,
-            unreadNotifications: this.currentUser.notifications.filter(n => !n.read).length
+            questionnairesCreated: this.currentUser.questionnaires?.length || 0,
+            friendsAdded: this.currentUser.friends?.length || 0,
+            completedQuestionnaires: this.currentUser.receivedQuestionnaires?.filter(q => q.status === 'completed').length || 0,
+            unreadNotifications: this.currentUser.notifications?.filter(n => !n.read).length || 0
         };
 
         console.log('[Auth] User stats:', stats);
