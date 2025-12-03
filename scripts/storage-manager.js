@@ -61,8 +61,19 @@ class StorageManager {
         };
     }
 
-    // Get current user data
+    // Get current user data (with safety checks)
     getUserData() {
+        if (!this.userData) {
+            console.warn('[StorageManager] User data not initialized');
+            return this.getDefaultUserData();
+        }
+
+        // Ensure all required arrays exist
+        if (!this.userData.questionnaires) this.userData.questionnaires = [];
+        if (!this.userData.friends) this.userData.friends = [];
+        if (!this.userData.receivedQuestionnaires) this.userData.receivedQuestionnaires = [];
+        if (!this.userData.notifications) this.userData.notifications = [];
+
         return this.userData;
     }
 

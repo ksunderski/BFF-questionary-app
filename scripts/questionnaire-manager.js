@@ -37,6 +37,13 @@ class QuestionnaireManager {
         };
 
         const userData = storageManager.getUserData();
+
+        // Ensure questionnaires array exists
+        if (!userData.questionnaires) {
+            console.warn('[QuestionnaireManager] Questionnaires array missing, initializing...');
+            userData.questionnaires = [];
+        }
+
         userData.questionnaires.push(questionnaire);
         await storageManager.saveUserData();
 
