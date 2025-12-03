@@ -8,8 +8,12 @@ class QuestionnaireManager {
     // Get all questionnaires
     getQuestionnaires() {
         const userData = storageManager.getUserData();
+        if (!userData || !userData.questionnaires) {
+            console.warn('[QuestionnaireManager] No questionnaires data available');
+            return [];
+        }
         console.log('[QuestionnaireManager] Retrieved questionnaires:', userData.questionnaires.length);
-        return userData.questionnaires || [];
+        return userData.questionnaires;
     }
 
     // Get questionnaire by ID
