@@ -1,0 +1,196 @@
+/* CSS Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Color Palette - 80s-90s Notebook Theme */
+    --paper-bg: #fdf6e3;
+    --ruled-line: #d4c4a8;
+    --margin-line: #e74c3c;
+    --pen-color: #2c3e50;
+    --pen-light: #566573;
+    --accent-blue: #3498db;
+    --accent-pink: #ff6b9d;
+    --accent-yellow: #f39c12;
+
+    /* Typography */
+    --font-handwritten: 'Indie Flower', cursive;
+    --font-handwritten-alt: 'Patrick Hand', cursive;
+
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+}
+
+body {
+    font-family: var(--font-handwritten);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-lg);
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    padding: var(--spacing-lg);
+}
+
+.modal-content {
+    background: white;
+    border-radius: 12px;
+    padding: var(--spacing-xl);
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+    font-family: var(--font-handwritten-alt);
+    color: var(--pen-color);
+    margin-bottom: var(--spacing-md);
+    font-size: 24px;
+}
+
+.modal-content h3 {
+    font-family: var(--font-handwritten-alt);
+    color: var(--pen-color);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+    font-size: 18px;
+}
+
+.modal-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--pen-light);
+    margin-bottom: var(--spacing-md);
+}
+
+.modal-content a {
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+.modal-content a:hover {
+    text-decoration: underline;
+}
+
+.important-notes, .instructions {
+    margin: var(--spacing-lg) 0;
+}
+
+.important-notes ol, .instructions ul {
+    margin-left: var(--spacing-lg);
+    line-height: 1.8;
+}
+
+.important-notes li, .instructions li {
+    margin-bottom: var(--spacing-sm);
+    font-size: 15px;
+}
+
+.api-key-input-section {
+    margin-top: var(--spacing-lg);
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+#api-key-input {
+    flex: 1;
+    padding: var(--spacing-md);
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+#api-key-input:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+}
+
+#save-api-key-btn {
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--accent-blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: var(--font-handwritten-alt);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#save-api-key-btn:hover {
+    background: #2980b9;
+}
+
+.message {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }

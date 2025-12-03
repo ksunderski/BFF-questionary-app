@@ -1,0 +1,74 @@
+/* Notebook Paper Theme */
+.app-content {
+    background: var(--paper-bg);
+    background-image:
+        linear-gradient(90deg, var(--margin-line) 1px, transparent 1px),
+        repeating-linear-gradient(
+            var(--paper-bg),
+            var(--paper-bg) 28px,
+            var(--ruled-line) 28px,
+            var(--ruled-line) 29px
+        );
+    background-size: 40px 29px, 100% 29px;
+    background-position: 0 0, 0 0;
+    padding: var(--spacing-lg);
+}
+
+/* Page Container */
+.page {
+    min-height: 100%;
+    padding-bottom: var(--spacing-xl);
+}
+
+/* Page Header */
+.page-header {
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px dashed var(--ruled-line);
+}
+
+.page-title {
+    font-family: var(--font-handwritten-alt);
+    font-size: 28px;
+    color: var(--pen-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.page-subtitle {
+    font-size: 16px;
+    color: var(--pen-light);
+}
+
+/* Back Button */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: transparent;
+    border: 2px solid var(--accent-blue);
+    border-radius: 8px;
+    color: var(--accent-blue);
+    font-family: var(--font-handwritten);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: var(--spacing-md);
+}
+
+.back-button:hover {
+    background: var(--accent-blue);
+    color: white;
+}
+
+/* Handwritten Text Effect */
+.handwritten {
+    font-family: var(--font-handwritten);
+    color: var(--pen-color);
+    line-height: 1.8;
+}
+
+.handwritten-alt {
+    font-family: var(--font-handwritten-alt);
+    color: var(--pen-color);
+}
