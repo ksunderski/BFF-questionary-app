@@ -200,7 +200,7 @@ Here's a checklist of features to verify:
 
 ### Issue: API Key Modal Keeps Appearing
 
-**Solution:** 
+**Solution:**
 - Make sure you clicked "Save" after pasting the key
 - Wait for the "Success!" message
 - Check that you're on the Meta internal network
