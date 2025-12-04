@@ -19,6 +19,23 @@ class UIRenderer {
                     <div class="page-subtitle">Welcome, ${escapeHTML(user.profile.name)}! 💌</div>
                 </div>
 
+                <div class="card" style="background: #fff9e6; border-color: #ffc107;">
+                    <div class="card-title">📨 Received a BFF Code?</div>
+                    <p style="font-size: 14px; margin-bottom: 10px;">Enter your friend's code to receive their questionnaire</p>
+                    <div class="form-group" style="margin-bottom: 10px;">
+                        <input
+                            type="text"
+                            id="friend-code-input"
+                            class="form-input"
+                            placeholder="BFF-ABC123"
+                            style="text-transform: uppercase;"
+                        />
+                    </div>
+                    <button class="btn btn-primary btn-block" onclick="app.redeemFriendCode()">
+                        Redeem Code
+                    </button>
+                </div>
+
                 <div class="menu-buttons">
                     <button class="menu-button" onclick="app.navigateToProfile()">
                         📋 My Profile

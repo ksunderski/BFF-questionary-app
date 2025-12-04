@@ -109,15 +109,19 @@ Your teammate will give you a code like: `BFF-ABC123`
 
 #### **Step 2: Redeem the Code**
 
-Currently, code redemption requires manually adding it to the URL:
+You can now redeem the code directly from the main menu:
 
+1. On the **Main Menu**, you'll see a yellow card at the top labeled **"📨 Received a BFF Code?"**
+2. **Type or paste the BFF code** into the input field (e.g., `BFF-ABC123`)
+3. Click the **"Redeem Code"** button
+4. If successful, you'll see a success message!
+
+**Alternative Method (Manual URL):**
+If you prefer, you can still add the code as a URL parameter:
 1. Look at your browser's address bar
 2. It should look like: `file:///Users/yourusername/Downloads/BFF-questionary-app/index.html`
-3. **Add the code as a URL parameter:**
-   - Click at the end of the URL
-   - Type: `?friendCode=BFF-ABC123` (use the actual code your teammate gave you)
-   - Press **Enter**
-4. The page will reload
+3. Add the code as a URL parameter: `?friendCode=BFF-ABC123`
+4. Press **Enter**
 
 #### **Step 3: Check Your Inbox**
 

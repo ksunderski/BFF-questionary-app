@@ -459,6 +459,43 @@ class App {
         }
     }
 
+    async redeemFriendCode() {
+        console.log('[App] Redeem friend code called');
+
+        const codeInput = document.getElementById('friend-code-input');
+        const code = codeInput ? codeInput.value.trim().toUpperCase() : '';
+
+        if (!code) {
+            alert('Please enter a friend code');
+            return;
+        }
+
+        if (!code.startsWith('BFF-')) {
+            alert('Invalid friend code format. Friend codes should start with "BFF-"');
+            return;
+        }
+
+        try {
+            console.log('[App] Redeeming friend code:', code);
+            showLoading('Redeeming friend code...');
+
+            await friendManager.redeemFriendCode(code);
+
+            console.log('[App] Friend code redeemed successfully');
+            alert(`Success! Friend code ${code} has been redeemed. Check your Inbox to see the questionnaire!`);
+
+            this.navigateToInbox();
+
+        } catch (error) {
+            console.error('[App] Error redeeming friend code:', error);
+            if (error.message === 'Invalid friend code') {
+                showError('Invalid Friend Code', 'This friend code does not exist or has already been used. Please check the code and try again.');
+            } else {
+                showError('Failed to redeem friend code', error.message);
+            }
+        }
+    }
+
     // Event handlers
     async handleCreateProfile() {
         console.log('[App] Handle create profile called');
